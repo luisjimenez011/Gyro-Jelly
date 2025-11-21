@@ -1,21 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://eg2iad57n6r5"]
 
-[ext_resource type="Texture2D" uid="uid://hffthwx42i1l" path="res://icon.svg" id="1_3tbxw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3m3f"]
-size = Vector2(209, 154)
+[ext_resource type="Script" uid="uid://bqt4kvm5tih67" path="res://scripts/GameManager.gd" id="1_xej52"]
+[ext_resource type="PackedScene" uid="uid://bkgjjp5l2rjey" path="res://scenes/Jelly.tscn" id="2_xej52"]
 
 [node name="MainGame" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_xej52")
+jelly_scene = ExtResource("2_xej52")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-
-[node name="PlayerTest" type="RigidBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="PlayerTest"]
-texture = ExtResource("1_3tbxw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTest"]
-position = Vector2(-1, 12)
-shape = SubResource("RectangleShape2D_e3m3f")
