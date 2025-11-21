@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://eg2iad57n6r5"]
+
+[ext_resource type="Texture2D" uid="uid://hffthwx42i1l" path="res://icon.svg" id="1_3tbxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3m3f"]
+size = Vector2(209, 154)
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+
+[node name="PlayerTest" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerTest"]
+texture = ExtResource("1_3tbxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTest"]
+position = Vector2(-1, 12)
+shape = SubResource("RectangleShape2D_e3m3f")
